@@ -1,0 +1,11 @@
+.textD {
+    text-decoration: none!important;
+}
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+    background-color: #631d65!important;
+}
+.navBackground{
+    background: #e52e71!important;
+    /* background-image: -webkit-gradient(linear, right bottom, left top, from(#e52e71), to(#ff8a00)); */
+    /* background-image: linear-gradient(to bottom, #e52e71, #ff8a00)!important; */
+}

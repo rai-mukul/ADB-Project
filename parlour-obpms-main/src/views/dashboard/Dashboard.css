@@ -1,0 +1,11 @@
+.cardBg1{
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+.cardBg2{
+    background-image: radial-gradient(circle at -18.3% 31.7%, #ffffff 0, #ffffff 12.5%, #f6ffff 25%, #e3fbf9 37.5%, #cdf2f2 50%, #b7e8ec 62.5%, #a2dfe9 75%, #8fd7e7 87.5%, #7ecfe6 100%);
+}
+
+.cardBg3{
+    background-image: radial-gradient(circle at -20.71% 50%, #ffffff 0, #ebffff 25%, #b5def2 50%, #7fb9d7 75%, #4e9bc1 100%);
+}

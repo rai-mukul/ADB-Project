@@ -1,0 +1,13 @@
+Fonts used in this design:
+
+Font: Open Sans
+Author: Ascender Fonts
+Url: http://www.fontsquirrel.com/fonts/open-sans
+
+Font: Roboto Slab
+Author: Christian Robertson
+Url: http://www.fontsquirrel.com/fonts/roboto-slab
+
+Font: De Valencia
+Author: Manuel Fernández del Campo García
+Url: https://www.fontsquirrel.com/fonts/de-valencia

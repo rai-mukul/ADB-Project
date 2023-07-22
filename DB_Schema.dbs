@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="MongoDb" id="Project-1dd1" database="MongoDb" >
+	<schema name="parlour" >
+		<table name="books" virtual="y" >
+			<column name="_id" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="userName" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="parlourName" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="productName" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="time" type="date" length="800" decimal="0" jt="91" mandatory="y" />
+			<column name="takenTime" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="date" type="date" length="800" decimal="0" jt="91" mandatory="y" />
+			<column name="price" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="serviceCompleteTime" type="double" length="800" decimal="0" jt="8" mandatory="y" />
+			<column name="parlour" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="user" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="__v" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<fk name="Relationship" virtual="y" to_schema="parlour" to_table="parlours" >
+				<fk_column name="parlour" pk="_id" />
+			</fk>
+			<fk name="Relationship" virtual="y" to_schema="parlour" to_table="users" >
+				<fk_column name="user" pk="_id" />
+			</fk>
+		</table>
+		<table name="parlours" virtual="y" >
+			<column name="_id" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="name" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="email" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="password" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="roadName" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="localityName" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="cityName" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="statName" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="phone" type="double" length="800" decimal="0" jt="8" mandatory="y" />
+			<column name="pinCode" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="active" type="Boolean" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="__v" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="photo" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<index name="email_1" unique="UNIQUE_KEY" >
+				<column name="email" />
+			</index>
+		</table>
+		<table name="products" virtual="y" >
+			<column name="_id" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="title" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="photo" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="desc" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="price" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="parlour" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="duration" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="time" type="date" length="800" decimal="0" jt="91" mandatory="y" />
+			<column name="__v" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<fk name="Relationship" virtual="y" to_schema="parlour" to_table="parlours" >
+				<fk_column name="parlour" pk="_id" />
+			</fk>
+		</table>
+		<table name="users" virtual="y" >
+			<column name="_id" type="objectId" length="800" decimal="0" jt="-8" mandatory="y" />
+			<column name="name" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="email" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="phone" type="double" length="800" decimal="0" jt="8" mandatory="y" />
+			<column name="password" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="active" type="Boolean" length="800" decimal="0" jt="12" mandatory="y" />
+			<column name="__v" type="int" length="800" decimal="0" jt="4" mandatory="y" />
+			<column name="photo" type="string" length="800" decimal="0" jt="12" mandatory="y" />
+			<index name="_id_" unique="PRIMARY_KEY" >
+				<column name="_id" />
+			</index>
+			<index name="email_1" unique="UNIQUE_KEY" >
+				<column name="email" />
+			</index>
+		</table>
+	</schema>
+	<connector name="MongoDb" database="MongoDb" driver_class="com.wisecoders.dbschema.mongodb.JdbcDriver" driver_jar="mongojdbc4.8.1.jar" driver_desc="No Authentication" host="localhost" port="27017" instance="parlour" user="admin" useSystemProxy="false" />
+	<layout name="Main Layout" id="Layout-11b7" show_relation="name" >
+		<entity schema="parlour" name="books" color="F4DDBE" x="48" y="80" />
+		<entity schema="parlour" name="parlours" color="BEBEF4" x="336" y="80" />
+		<entity schema="parlour" name="products" color="BED3F4" x="688" y="80" />
+		<entity schema="parlour" name="users" color="C7F4BE" x="144" y="416" />
+		<group name="Collection &#039;products&#039;" color="ECF0F7" >
+			<entity schema="parlour" name="products" />
+		</group>
+		<group name="Collection &#039;users&#039;" color="EEF7EC" >
+			<entity schema="parlour" name="users" />
+		</group>
+		<group name="Collection &#039;books&#039;" color="F7F2EC" >
+			<entity schema="parlour" name="books" />
+		</group>
+		<group name="Collection &#039;parlours&#039;" color="ECECF7" >
+			<entity schema="parlour" name="parlours" />
+		</group>
+	</layout>
+	<layout name="~Layout with Sample Tools" id="Layout-18f" show_column_type="y" show_relation="name" >
+		<entity schema="parlour" name="books" color="F4DDBE" x="304" y="80" />
+		<entity schema="parlour" name="parlours" color="BEBEF4" x="624" y="80" />
+		<entity schema="parlour" name="products" color="BED3F4" x="384" y="464" />
+		<entity schema="parlour" name="users" color="C7F4BE" x="48" y="464" />
+		<group name="products" color="ECF0F7" >
+			<entity schema="parlour" name="products" />
+		</group>
+		<group name="users" color="EEF7EC" >
+			<entity schema="parlour" name="users" />
+		</group>
+		<group name="books" color="F7F2EC" >
+			<entity schema="parlour" name="books" />
+		</group>
+		<group name="parlours" color="ECECF7" >
+			<entity schema="parlour" name="parlours" />
+		</group>
+		<script name="Query Editor" id="Editor-1521" language="SQL" >
+			<string><![CDATA[parlour.books.find()
+
+//OR
+
+USE parlour;
+db.books.find()
+
+//OR
+
+USE parlour;
+db.getCollection('books').find()]]></string>
+		</script>
+		<browser id="Browse-1afe" name="Relational Data Explorer" confirm_updates="y" >
+			<browse_table schema="parlour" entity="books" x="20" y="20" width="400" height="300" record_view="y" >
+				<browse_table schema="parlour" entity="parlours" fk="Relationship" x="440" y="20" width="500" height="350" record_view="y" >
+					<browse_table schema="parlour" entity="products" fk="Relationship" x="960" y="20" width="500" height="350" record_view="y" />
+				</browse_table>
+			</browse_table>
+		</browser>
+		<query id="Query-1265" name="Query Builder" >
+			<query_table schema="parlour" name="books" alias="books" x="48" y="48" >
+				<column name="_id" />
+				<column name="userName" />
+				<column name="parlourName" />
+				<column name="productName" />
+				<column name="time" />
+				<column name="takenTime" />
+				<column name="date" />
+				<column name="price" />
+				<column name="serviceCompleteTime" />
+				<column name="parlour" />
+				<column name="user" />
+				<column name="__v" />
+				<query_table schema="parlour" name="parlours" alias="parlours" x="304" y="48" fk="Relationship" type="Inner Join" >
+					<column name="_id" />
+					<column name="name" />
+					<column name="email" />
+					<column name="password" />
+					<column name="roadName" />
+					<column name="localityName" />
+					<column name="cityName" />
+					<column name="statName" />
+					<column name="phone" />
+					<column name="pinCode" />
+					<column name="active" />
+					<column name="__v" />
+					<column name="photo" />
+					<query_table schema="parlour" name="products" alias="products" x="512" y="48" fk="Relationship" type="Inner Join" >
+						<column name="_id" />
+						<column name="title" />
+						<column name="photo" />
+						<column name="desc" />
+						<column name="price" />
+						<column name="parlour" />
+						<column name="duration" />
+						<column name="time" />
+						<column name="__v" />
+					</query_table>
+				</query_table>
+			</query_table>
+		</query>
+		<form name="Report" id="Report-228c" template="Page" css="container-fluid" view="frame" >
+			<var name="samplePageNumber" type="4" value="0" mandatory="n" />
+			<var name="sampleRecordsPerPage" type="4" value="100" mandatory="n" />
+			<body name="Body" template="Grid" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2,-2}}" scroll="n" html="n" >
+				<cell type="label" name="Books Data" template="H3" pos="0,0,1,0,l,c" />
+				<cell type="chart" name="Pie" template="Pie" pos="0,1,4,1,l,c" max_records="20" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="_id" type="-8" />
+						<var name="userName" />
+						<var name="parlourName" />
+						<var name="productName" />
+						<var name="time" type="91" />
+						<var name="takenTime" type="4" />
+						<var name="date" type="91" />
+						<var name="price" type="4" />
+						<var name="serviceCompleteTime" type="8" />
+						<var name="parlour" type="-8" />
+						<var name="user" type="-8" />
+						<var name="__v" type="4" />
+						<script ><![CDATA[parlour.books.find()]]></script>
+					</form_script>
+					<param name="i0" value="productName" />
+					<param name="width" value="100%" />
+					<param name="v0" value="__v" />
+					<param name="title" value="Sample Chart" />
+					<param name="height" value="400px" />
+				</cell>
+				<tableview name="sample" template="Table" css="table table-striped table-sm table-hover" pos="0,2,4,2,f,f" layout="{{-2,-2,-2,-2,-2,-2,-2},{-2,-2}}" scroll="n" html="n" header_rows="1" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="_id" type="-8" />
+						<var name="userName" />
+						<var name="parlourName" />
+						<var name="productName" />
+						<var name="time" type="91" />
+						<var name="takenTime" type="4" />
+						<var name="date" type="91" />
+						<var name="price" type="4" />
+						<var name="serviceCompleteTime" type="8" />
+						<var name="parlour" type="-8" />
+						<var name="user" type="-8" />
+						<var name="__v" type="4" />
+						<script ><![CDATA[parlour.books.find()]]></script>
+					</form_script>
+					<cell type="label" name="_id" pos="0,0,0,0,c,c" />
+					<cell type="label" name="userName" pos="1,0,1,0,c,c" />
+					<cell type="label" name="parlourName" pos="2,0,2,0,c,c" />
+					<cell type="label" name="productName" pos="3,0,3,0,c,c" />
+					<cell type="label" name="time" pos="4,0,4,0,c,c" />
+					<cell type="label" name="takenTime" pos="5,0,5,0,c,c" />
+					<cell type="label" name="Button can open other pages." pos="6,0,6,0,c,c" />
+					<cell type="label" name="${_id}" template="Plain" pos="0,1,0,1,l,c" />
+					<cell type="label" name="${userName}" template="Plain" pos="1,1,1,1,l,c" />
+					<cell type="label" name="${parlourName}" template="Plain" pos="2,1,2,1,l,c" />
+					<cell type="label" name="${productName}" template="Plain" pos="3,1,3,1,l,c" />
+					<cell type="label" name="${time}" template="Plain" pos="4,1,4,1,l,c" />
+					<cell type="label" name="${takenTime}" template="Plain" pos="5,1,5,1,l,c" />
+					<cell type="button" name="More" template="Plain" css="btn btn-sm btn-secondary" pos="6,1,6,1,c,c" ref_id="Report-228c" />
+				</tableview>
+				<cell type="href" name="" disabled="${samplePageNumber&lt;1}" pos="0,3,0,3,l,c" glyph="bi-chevron_double_left" ref_id="Report-228c" >
+					<var name="samplePageNumber" value="0" />
+				</cell>
+				<cell type="href" name="" disabled="${samplePageNumber&lt;1}" pos="1,3,1,3,l,c" glyph="bi-chevron_left" ref_id="Report-228c" >
+					<var name="samplePageNumber" value="${Math.max(0,samplePageNumber-1)}" />
+				</cell>
+				<cell type="label" name="Page ${samplePageNumber+1}" pos="2,3,2,3,l,c" />
+				<cell type="href" name="" disabled="${!sampleHasNextPage}" pos="3,3,3,3,l,c" glyph="bi-chevron_right" ref_id="Report-228c" >
+					<var name="samplePageNumber" value="${( samplePageNumber+1 )}" />
+				</cell>
+			</body>
+		</form>
+	</layout>
+</project>
