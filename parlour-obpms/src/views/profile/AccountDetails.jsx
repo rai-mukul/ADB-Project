@@ -207,14 +207,14 @@ const AccountDetails = (props) => {
                       InputProps={{
                         readOnly: true,
                       }}
-                      value="India"
+                      value="USA"
                       variant="outlined"
                     ></TextField>
                   </Grid>
                   <Grid item md={6} xs={12}>
                     <TextField
                       fullWidth
-                      label="Pin Code"
+                      label="ZIP Code"
                       name="pin"
                       onChange={(e) => setPinCode(e.target.value)}
                       required

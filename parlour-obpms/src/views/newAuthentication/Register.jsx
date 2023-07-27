@@ -54,7 +54,7 @@ const SignUp = ({ token, logout }) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [pinCode, setPinCode] = React.useState("");
-  const [country] = React.useState("INDIA");
+  const [country] = React.useState("USA");
   const [phone, setPhone] = React.useState(Number);
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -211,7 +211,7 @@ console.log(pinCode);
                   required
                   fullWidth
                   id="pinCode"
-                  label="PIN Code"
+                  label="ZIP Code"
                   name="pinCode"
                   onChange={(e) => setPinCode(e.target.value)}
                   autoComplete="pin-code"
