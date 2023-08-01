@@ -9,7 +9,7 @@ const TheFooter = () => {
         <Link to="/" target="_blank" rel="noopener noreferrer">
           Parlour | Admin
         </Link>
-        <span className="ml-1">&copy; 2022 admin@obpms.</span>
+        <span className="ml-1">&copy; 2023 admin@obpms.</span>
       </div>
       <div className="mfs-auto">
         <span className="mr-1">Powered by</span>

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const productSchema = new mongoose.Schema({
+const serviceSchema = new mongoose.Schema({
     title:String,
     photo:String,
     desc:String,
@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema({
     },
     parlour:{
         type:mongoose.Schema.ObjectId,
-        ref:'Parlour'
+        ref:'Admin'
     },
     duration:Number,
 },{
@@ -24,21 +24,21 @@ const productSchema = new mongoose.Schema({
 })
 
 
-// productSchema.index({'$**':'text'})
+// serviceSchema.index({'$**':'text'})
 
-// productSchema.pre(/find/,async function(next){
+// serviceSchema.pre(/find/,async function(next){
 //     this.populate({
 //         path:'parlour'
 //     })
 // })
 
 
-// productSchema.post(/find/,async function(next){
+// serviceSchema.post(/find/,async function(next){
 //     this.populate({
 //         path:'parlour'
 //     })
 // })
 
 
-const Product = mongoose.model('Product',productSchema)
-module.exports = Product;
+const Service = mongoose.model('Service',serviceSchema)
+module.exports = Service;

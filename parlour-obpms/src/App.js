@@ -12,6 +12,7 @@ import PassInput from  "./views/newAuthentication/PassInput";
 const ForgotPass = React.lazy(() =>import("./views/newAuthentication/ForgotPass"));
 const Dashboard = React.lazy(() => import("./views/dashboard/Dashboard"));
 const AddProduct = React.lazy(() => import("./views/saloon/AddProducts"));
+const AddStylist = React.lazy(() => import("./views/saloon/AddStylist"));
 const MyProduct = React.lazy(() => import("./views/saloon/MyProducts"));
 const BookingHistory = React.lazy(() => import("./views/saloon/History"));
 const MyBooking = React.lazy(() => import("./views/saloon/MyAppointment"));
@@ -19,6 +20,7 @@ const Login = React.lazy(() => import("./views/newAuthentication/Login"));
 const Profile = React.lazy(() => import("./views/profile/Profile"));
 const Signup = React.lazy(() => import("./views/newAuthentication/Register"));
 const UpdateProduct = React.lazy(() => import("./views/saloon/UpdateProduct"));
+const WalkIn = React.lazy(() => import("./views/saloon/WalkIn"));
 
 
 const loading = (
@@ -66,6 +68,8 @@ const App = ({ user }) => {
                     <Route  path="/appointment" component={MyBooking} />
                     <Route  path="/history" component={BookingHistory} />
                     <Route  path="/my-products" component={MyProduct} />
+                    <Route  path="/add-walk-in" component={WalkIn} />
+                    <Route  path="/add-stylist" component={AddStylist} />
                     <Route  path="/update-product/:id" component={UpdateProduct} />
                     <Route  path="/profile" component={(props) => <Profile {...props} />}/>
                   </Switch>

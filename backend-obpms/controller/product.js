@@ -1,4 +1,5 @@
 const Product = require("../model/ParlourProduct");
+const Stylist = require("../model/stylistModel");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 const multer = require("multer");
@@ -49,6 +50,19 @@ exports.addproduct = catchAsync(async (req, res, next) => {
   // // console.log(products)
   res.status(200).json(products);
 });
+
+exports.addStylist = catchAsync(async (req, res, next) => {
+  const products = await Stylist.create({
+    title: req.body.title,
+    parlour: req.parlour.id,
+  });
+
+  // // console.log(products)
+  res.status(200).json(products);
+});
+
+
+
 
 exports.getProduct = catchAsync(async (req, res, next) => {
   const products = await Product.find({ parlour: req.parlour.id }).select(

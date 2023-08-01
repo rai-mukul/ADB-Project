@@ -33,6 +33,8 @@ router.route('/productedit/:id').patch(auth.protect,product.productEdit)
 router.route('/productdelete/:id').delete(auth.protect,product.productDelete)
 router.route('/productget').get(auth.protect,product.getProduct)
 router.route('/getAllParlours').post(auth.searchParlours)
+router.route('/addstylist').post(auth.protect,product.addStylist)
+
 
 
 

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const bookingSchema = new mongoose.Schema({
+const appoimentSchema = new mongoose.Schema({
     userName:String,
     parlourName:String,
     productName:String,
@@ -27,5 +27,5 @@ const bookingSchema = new mongoose.Schema({
 
 
 
-const Book = mongoose.model('Book',bookingSchema)
-module.exports = Book;
+const Appioment = mongoose.model('Appioment',appoimentSchema)
+module.exports = Appioment;

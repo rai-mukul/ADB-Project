@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "This is description.",
   "author": {
-    "name": "Krishna Nishad"
+    "name": "Mukul Rai"
   },
   "homepage": "/",
   "copyright": "Copyright",
@@ -11,7 +11,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/btrchain"
+    "url": "https://github.com/rai-mukul"
   },
   "dependencies": {
     "@coreui/coreui": "^3.4.0",
@@ -51,7 +51,7 @@
     "react-scripts": "^4.0.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:cov": "npm test -- --coverage --watchAll=false",

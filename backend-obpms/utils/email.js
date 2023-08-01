@@ -3,13 +3,15 @@ const nodemailer = require("nodemailer");
 
 const sendEmail = async (options)=>{
      
-    const transport = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-          user: "obmps.btrchain@gmail.com",
-          pass:"nkzdhuhfmhkdnctc"
-        },
-      }); 
+  const transport = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: "gbu.mukul@gmail.com",
+      pass: "kiovfycwxrnfkqqu",
+    },
+  });
     
      const mailOption = {
         from: `Parlour <obmps.btrchain@gmail.com>`,

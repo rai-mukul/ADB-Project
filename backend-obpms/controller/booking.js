@@ -6,8 +6,7 @@ const sendEmail = require("../utils/email");
 
 
 
-exports.book = catchAsync(async (req, res, next) => {
-  
+exports.book = catchAsync(async (req, res, next) => { 
       let d = Date.parse(req.body.date)
       let f = req.body.takenTime*60*1000
     const findbooking  =  await Book.find({
