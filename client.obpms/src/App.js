@@ -19,6 +19,7 @@ import { connect } from "react-redux";
 import PrivateRoute from "./PrivateRoute";
 import PassInput from "./components/authentication/PassInput.jsx";
 import BookingHistory from "./components/user/BookingHistory.jsx";
+import Timer from "./components/timer/Timer.jsx";
 
 function App({ user }) {
   const [usr, setUsr] = useState(false);
@@ -58,6 +59,7 @@ function App({ user }) {
           <Route path="/error" element={<Error404 />} />
           <Route path="/login" element={<Login />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/timer" element={<Timer />} />
           <Route path="/product" element={<Products />} />
           <Route
             path="/product/:id"
