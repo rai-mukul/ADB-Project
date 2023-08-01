@@ -9,7 +9,7 @@
     "start": "node app"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mukul Rai",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",

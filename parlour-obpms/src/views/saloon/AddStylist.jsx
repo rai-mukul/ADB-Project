@@ -19,19 +19,11 @@ const MenuProps = {
 };
 
 const names = [
-  "Oliver Hansen",
-  "Van Henry",
-  "April Tucker",
-  "Ralph Hubbard",
-  "Omar Alexander",
-  "Carlos Abbott",
-  "Miriam Wagner",
-  "Bradley Wilkerson",
-  "Virginia Andrews",
-  "Kelly Snyder",
+  "Sample Service 1",
+  "Sample Service 2",
 ];
 const AddStylist= ({ user }) => {
-  // const [personName, setPersonName] = React.useState([]);
+  const [personName, setPersonName] = React.useState([]);
   const [title, setTitle] = React.useState("");
   const [phone, setPhone] = React.useState("");
 
@@ -55,14 +47,14 @@ const AddStylist= ({ user }) => {
     }
   };
 
-  // const handleChange = (event) => { 
-  //   const {
-  //     target: { value },
-  //   } = event;
-  //   setPersonName(
-  //     typeof value === "string" ? value.split(",") : value
-  //   );
-  // };
+  const handleChange = (event) => { 
+    const {
+      target: { value },
+    } = event;
+    setPersonName(
+      typeof value === "string" ? value.split(",") : value
+    );
+  };
   return (
     <div>
       <Container>
@@ -78,6 +70,7 @@ const AddStylist= ({ user }) => {
                 id="stylist-name"
                 label="Stylist Name"
                 variant="standard"
+                required
                 fullWidth
                 onChange={(e) => setTitle(e.target.value)}
               />
@@ -89,20 +82,22 @@ const AddStylist= ({ user }) => {
                 id="stylist-contact"
                 label="Phone Number"
                 type="number"
+                required
                 variant="standard"
                 fullWidth
                 onChange={(e) => setPhone(e.target.value)}
               />
             </Box>
           </Grid>
-          {/* <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={6}>
             <Box sx={{ paddingTop: "10px" }}>
               <FormControl sx={{ width: '100%' }}>
-                <InputLabel  variant="standard" id="demo-multiple-checkbox-label">Tag</InputLabel>
+                <InputLabel  variant="standard" id="demo-multiple-checkbox-label">Select Service</InputLabel>
                 <Select
                   labelId="demo-multiple-checkbox-label"
                   id="demo-multiple-checkbox"
                   multiple
+                  required
                   variant="standard"
                   value={personName}
                   onChange={handleChange}
@@ -118,7 +113,7 @@ const AddStylist= ({ user }) => {
                 </Select>
               </FormControl>
             </Box>
-          </Grid> */}
+          </Grid>
 
           {/* <Grid item xs={12}>
             <Box sx={{ paddingTop: "10px" }}>

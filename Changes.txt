@@ -1,0 +1,6 @@
+No Alert.
+time form as AM PM on dashboard
+error booking time.
+change to local time.
+Add stylish to any appointment in the admin  
+After the stylist make an email to send 

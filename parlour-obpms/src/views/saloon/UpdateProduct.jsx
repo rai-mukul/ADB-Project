@@ -81,7 +81,7 @@ const UpdateProduct = ({ user }) => {
             <Box sx={{ paddingTop: "10px" }}>
               <TextField
                 id="productName"
-                label="Product Name"
+                label="Service Name"
                 variant="standard"
                 fullWidth
                 value={title}
@@ -112,7 +112,8 @@ const UpdateProduct = ({ user }) => {
                 multiline
                 variant="standard"
                 fullWidth
-                value={desc}
+                defaultValue={desc}
+                // value={desc}
                 onChange={(e) => setDesc(e.target.value)}
               />
             </Box>

@@ -14,12 +14,12 @@ const _nav = [
     _tag: "CSidebarNavTitle",
     _children: ["Main Pages"],
   },
-  {
-    _tag: "CSidebarNavItem",
-    name: "Walk In",
-    to: "/add-walk-in",
-    icon: <FaWalking className="c-sidebar-nav-icon" />,
-  },
+  // {
+  //   _tag: "CSidebarNavItem",
+  //   name: "Walk In",
+  //   to: "/add-walk-in",
+  //   icon: <FaWalking className="c-sidebar-nav-icon" />,
+  // },
   {
     _tag: "CSidebarNavItem",
     name: "Add Stylist",

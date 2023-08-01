@@ -49,7 +49,7 @@ const TotalEarning = ({ user }) => {
                   width: 56,
                 }}
               >
-                <CurrencyRupeeIcon />
+                
               </Avatar>
             </Grid>
           </Grid>
