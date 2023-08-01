@@ -14,7 +14,7 @@ const app = express()
 app.use(express.static(`${__dirname}/public`))
 
 app.use(express.json())
-// var whitelist = ['https://obpms.btrchain.com', 'https://parlour.btrchain.com']
+// var whitelist = ['https://obpms.mukulrai.in', 'https://parlour.mukulrai.in']
 // var corsOptions = {
 //   origin: function (origin, callback) {
 //     if (whitelist.indexOf(origin) !== -1) {
@@ -28,8 +28,8 @@ app.use(express.json())
 app.use(cors())
 
 mongoose.connect(
-    process.env.MONGO_DB,    //uncomment if using remote db
-    // process.env.MONGO_DB_lOCALHOST, //uncomment if using local db
+    // process.env.MONGO_DB,    //uncomment if using remote db
+    process.env.MONGO_DB_lOCALHOST, //uncomment if using local db
     {
         useNewUrlParser: true,
         useUnifiedTopology: true

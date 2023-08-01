@@ -77,7 +77,7 @@ const HeaderFile = ({ user, token }) => {
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
           >
-            Glitter-Girls
+            OBPMS
           </Typography>
           {/* <img src='/assets/Artboard 1logo.svg' className='logo'></img> */}
 
@@ -127,7 +127,7 @@ const HeaderFile = ({ user, token }) => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            Glitter-Girls
+            OBPMS
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {p.map((navData, i) => (

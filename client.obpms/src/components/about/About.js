@@ -61,7 +61,7 @@ export default function ComplexGrid() {
                 gutterBottom
                 color="text.secondary"
               >
-                Our Story: <br/>Established in 2023, Glitter-Girls has been serving
+                Our Story: <br/>Established in 2023, OBPMS has been serving
                 the Overland Park community with exceptional beauty services and
                 treatments. From the beginning, our mission has been to bring
                 out the natural beauty in everyone who walks through our doors.

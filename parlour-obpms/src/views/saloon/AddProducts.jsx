@@ -9,7 +9,7 @@ import axios from "../../axios";
 import FormData from "form-data";
 import { connect } from "react-redux";
 
-const AddProducts = ({ user }) => {
+const AddProducts = ({ user }) => { 
   const [file, setFile] = React.useState(null);
   const [progress, setProgress] = React.useState(1);
   const [product, setProduct] = React.useState("");

@@ -2,6 +2,10 @@ import { Box, Checkbox, Container, FormControl, InputLabel, ListItemText, MenuIt
 import React from "react";
 import Button from "@mui/material/Button";
 import { Grid, TextField } from "@mui/material";
+import axios from "../../axios";
+import FormData from "form-data";
+import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -26,24 +30,46 @@ const names = [
   "Virginia Andrews",
   "Kelly Snyder",
 ];
-export default function AddStylist() {
-  const [personName, setPersonName] = React.useState([]);
+const AddStylist= ({ user }) => {
+  // const [personName, setPersonName] = React.useState([]);
+  const [title, setTitle] = React.useState("");
+  const [phone, setPhone] = React.useState("");
 
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+
+
+  const addstylists = async () => {
+    try {
+      const data = new FormData();
+      data.append("title", title);
+      data.append("phone", phone);
+
+      const stylistData = await axios.post("/api/parlours/addstylist", data, {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+      console.log(stylistData.data);
+      alert("Stylist Added Successfully...");
+    } catch (error) {
+      console.log(error.response.data);
+    }
   };
+
+  // const handleChange = (event) => { 
+  //   const {
+  //     target: { value },
+  //   } = event;
+  //   setPersonName(
+  //     typeof value === "string" ? value.split(",") : value
+  //   );
+  // };
   return (
     <div>
       <Container>
         <Box sx={{ pt: 5 }}>
           <h3 align="center">Add Stylist</h3>
         </Box>
+        <form>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <Box sx={{ paddingTop: "10px" }}>
@@ -53,6 +79,7 @@ export default function AddStylist() {
                 label="Stylist Name"
                 variant="standard"
                 fullWidth
+                onChange={(e) => setTitle(e.target.value)}
               />
             </Box>
           </Grid>
@@ -64,10 +91,11 @@ export default function AddStylist() {
                 type="number"
                 variant="standard"
                 fullWidth
+                onChange={(e) => setPhone(e.target.value)}
               />
             </Box>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          {/* <Grid item xs={12} sm={6}>
             <Box sx={{ paddingTop: "10px" }}>
               <FormControl sx={{ width: '100%' }}>
                 <InputLabel  variant="standard" id="demo-multiple-checkbox-label">Tag</InputLabel>
@@ -90,9 +118,9 @@ export default function AddStylist() {
                 </Select>
               </FormControl>
             </Box>
-          </Grid>
+          </Grid> */}
 
-          <Grid item xs={12}>
+          {/* <Grid item xs={12}>
             <Box sx={{ paddingTop: "10px" }}>
               <TextField
                 id="standard-textarea"
@@ -103,7 +131,7 @@ export default function AddStylist() {
                 fullWidth
               />
             </Box>
-          </Grid>
+          </Grid> */}
           <Box
             sx={{
               marginTop: 8,
@@ -111,12 +139,18 @@ export default function AddStylist() {
               alignItems: "center",
             }}
           >
-            <Button variant="contained" component="span">
+            <Button variant="contained" component="span" onClick={() => addstylists()}>
               Add Service
             </Button>
           </Box>
         </Grid>
+        </form>
       </Container>
     </div>
   );
 }
+const mapStatetoProps = (state) => ({
+  user: state.user.data,
+});
+
+export default connect(mapStatetoProps, null)(AddStylist);
