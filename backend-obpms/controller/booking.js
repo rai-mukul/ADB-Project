@@ -64,7 +64,7 @@ exports.book = catchAsync(async (req, res, next) => {
                                 </p>
                                 <p><b>Details of your appointment below:<b></p>
                                 <ul>
-                                  <li><b>Product Name:</b> ${req.body.ProductName}</li>
+                                  <li><b>Service Name:</b> ${req.body.ProductName}</li>
                                   <li><b>Date & time:</b> ${req.body.date}</li>
                                   <li><b>Price:</b> ${req.body.price}</li>
                                 </ul>

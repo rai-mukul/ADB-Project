@@ -9,7 +9,7 @@ const columns = [
   { field: "userName", headerName: "User Name", width: 200 },
   { field: "productName", headerName: "Service Name", width: 300 },
   { field: "date", headerName: "Order Date", width: 220 },
-  { field: "price", headerName: "Order Price(in Rupees)", width: 220 },
+  { field: "price", headerName: "Order Price(in USD)", width: 220 },
 ];
 
 const MyAppointments = ({ user }) => {

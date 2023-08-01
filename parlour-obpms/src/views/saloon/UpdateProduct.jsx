@@ -94,7 +94,7 @@ const UpdateProduct = ({ user }) => {
               <TextField
                 type="number"
                 id="productPrice"
-                label="Service Price(in Rupees)"
+                label="Service Price(in USD)"
                 variant="standard"
                 fullWidth
                 value={price}

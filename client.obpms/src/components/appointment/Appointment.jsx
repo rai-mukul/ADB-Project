@@ -99,8 +99,8 @@ const Appointment = ({ user }) => {
           currency: razorpay.data.currency,
           amount: razorpay.data.amount.toString(),
           order_id: razorpay.data.id,
-          name: 'Donation',
-          description: 'Thank you for nothing. Please give us some money',
+          name: 'OBPMS-Summer',
+          description: 'Thank you for service. Please give us some money',
           handler: async function (response) {
             const userData = await axios.post("/api/users/booking", data, {
               headers: {
@@ -202,7 +202,7 @@ const Appointment = ({ user }) => {
                       id="Product-Price"
                       label="Product Price"
                       fullWidth
-                      defaultValue="Product Price Here(In rupees)"
+                      defaultValue="Product Price Here(In USD)"
                       value={allpros?.price}
                       InputProps={{
                         readOnly: true,

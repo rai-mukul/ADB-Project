@@ -269,7 +269,7 @@ exports.razorpay= catchAsync(async(req,res,next)=>{
 
     const payment_capture = 1
 	const amount = req.body.price
-	const currency = 'INR'
+	const currency = 'USD'
 
     const options = {
 		amount: amount * 100,

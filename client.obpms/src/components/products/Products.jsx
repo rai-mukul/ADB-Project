@@ -43,7 +43,7 @@ const Products = () => {
     <div>
       <Container>
       <Divider style={{paddingTop:10,paddingButtom:10 }}>
-        <Chip color="warning" avatar={<Avatar>P</Avatar>} label="Available Products" />
+        <Chip color="warning" avatar={<Avatar>P</Avatar>} label="Available Services" />
       </Divider>
         <Grid
           container
@@ -78,7 +78,7 @@ const Products = () => {
                     <Box sx={{ paddingTop: "20px" }}>
                       <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
-                          Price : &#8377; {cuttingData.price}
+                          Price : $ {cuttingData.price}
                         </Grid>
                         <Grid item xs={12} sm={6}>
                           Time : {cuttingData.duration} minutes
