@@ -4,6 +4,7 @@ import { Avatar, Card, CardContent, Grid, Typography } from "@mui/material";
 import PeopleIcon from "@mui/icons-material/PeopleOutlined";
 import { connect } from "react-redux";
 import axios from "../../axios";
+// import axios from 'axios';
 
 const TotalCustomers = (props) => {
   let [rows, setRows] = React.useState([]);

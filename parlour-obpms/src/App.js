@@ -8,6 +8,7 @@ import TheFooter from "./containers/TheFooter";
 import { connect } from "react-redux";
 import VerificationPage from "./views/newAuthentication/emailVerify";
 import PassInput from  "./views/newAuthentication/PassInput";
+import axios from "axios";
 
 const ForgotPass = React.lazy(() =>import("./views/newAuthentication/ForgotPass"));
 const Dashboard = React.lazy(() => import("./views/dashboard/Dashboard"));
@@ -105,7 +106,7 @@ const App = ({ user }) => {
 };
 
 const mapStatetoProps = (state) => ({
-  user: state.user.data,
+  user: state.user ? state.user.data : null,
 });
 
 export default connect(mapStatetoProps, null)(App);

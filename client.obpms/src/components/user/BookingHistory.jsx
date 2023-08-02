@@ -3,6 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Box, Container } from "@mui/material";
 import { connect } from "react-redux";
 import axios from "../../axios";
+// import axios from 'axios';
 
 const columns = [
   { field: "id", headerName: "S. No.", width: 150 },
