@@ -6,7 +6,6 @@ import Stack from "@mui/material/Stack";
 import Input from "@mui/material/Input";
 import { Container, Grid, TextField, Typography } from "@mui/material";
 import axios from "../../axios";
-// import axios from 'axios';
 import FormData from "form-data";
 import { connect } from "react-redux";
 

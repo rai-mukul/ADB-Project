@@ -18,7 +18,6 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Stack from "@mui/material/Stack";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "../../axios";
-// import axios from 'axios';
 import { connect } from "react-redux";
 
 const Register = ({ token }) => {

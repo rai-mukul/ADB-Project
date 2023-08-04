@@ -3,7 +3,6 @@ import React from "react";
 import Button from "@mui/material/Button";
 import { Grid, TextField } from "@mui/material";
 import axios from "../../axios";
-// import axios from 'axios';
 import FormData from "form-data";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";

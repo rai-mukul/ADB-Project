@@ -17,7 +17,6 @@ import AlertTitle from "@mui/material/AlertTitle";
 import Alert from "@mui/material/Alert";
 import { connect } from "react-redux";
 import axios from "../../axios";
-//// import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = ({ token }) => {

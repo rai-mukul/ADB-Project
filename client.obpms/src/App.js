@@ -20,7 +20,6 @@ import PrivateRoute from "./PrivateRoute";
 import PassInput from "./components/authentication/PassInput.jsx";
 import BookingHistory from "./components/user/BookingHistory.jsx";
 import Timer from "./components/timer/Timer.jsx";
-// import axios from 'axios';
 
 function App({ user }) {
   const [usr, setUsr] = useState(false);

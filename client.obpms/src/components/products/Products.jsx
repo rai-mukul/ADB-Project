@@ -16,7 +16,6 @@ import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 import { Box } from "@mui/system";
 import axios from "../../axios";
-// import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 const Products = () => {

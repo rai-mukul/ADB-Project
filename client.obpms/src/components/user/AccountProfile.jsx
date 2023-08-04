@@ -11,7 +11,6 @@ import { connect } from "react-redux";
 import Button from "@mui/material/Button";
 import Form from "react-bootstrap/Form";
 import axios from "../../axios";
-// import axios from 'axios';
 
 import FormData from "form-data";
 

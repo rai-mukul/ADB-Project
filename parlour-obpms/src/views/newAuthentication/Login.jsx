@@ -14,7 +14,6 @@ import AlertTitle from "@mui/material/AlertTitle";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { connect } from "react-redux";
 import axios from "../../axios";
-// import axios from 'axios';
 import { useHistory, Link } from "react-router-dom";
 
 function Copyright(props) {

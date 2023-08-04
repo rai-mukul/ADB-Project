@@ -12,7 +12,6 @@ import {
 import { Box } from "@mui/system";
 import { useParams } from "react-router-dom";
 import axios from "../../axios";
-// import axios from 'axios';
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 

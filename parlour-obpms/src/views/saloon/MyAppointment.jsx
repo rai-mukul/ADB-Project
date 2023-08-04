@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { Box, Container } from "@mui/material";
 import axios from "../../axios";
-// import axios from 'axios';
 import { connect } from "react-redux";
 
 const columns = [

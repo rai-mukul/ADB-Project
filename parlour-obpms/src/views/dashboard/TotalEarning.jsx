@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import axios from "../../axios";
-// import axios from 'axios';
 import { connect } from "react-redux";
 
 const TotalEarning = ({ user }) => {

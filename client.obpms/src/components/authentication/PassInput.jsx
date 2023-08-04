@@ -18,7 +18,6 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Box } from "@mui/system";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "../../axios";
-// import axios from 'axios';
 
 export default function PassInput() {
   const id = useParams();

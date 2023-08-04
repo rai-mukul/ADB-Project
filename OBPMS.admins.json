@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "64ad7fb94dbd14e70de80908"
+  },
+  "name": "USA Parlour",
+  "email": "17ics055@gbu.ac.in",
+  "password": "$2b$12$LeXO6x4uhTOf5fmz9Z1dVOaFrW4leUtesVMtl5fNzvSW/8yIA0FS.",
+  "roadName": "sample road name",
+  "localityName": "sample locality",
+  "cityName": "kansas",
+  "statName": "Sikkim",
+  "phone": {
+    "$numberLong": "8002910156"
+  },
+  "pinCode": 841436,
+  "active": true,
+  "__v": 0
+}]

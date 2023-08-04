@@ -15,7 +15,6 @@ import { connect } from "react-redux";
 import Form from "react-bootstrap/Form";
 import { Box } from "@mui/system";
 import axios from "../../axios";
-// import axios from 'axios';
 import FormData from "form-data";
 
 const AccountDetails = (props) => {

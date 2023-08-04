@@ -7,7 +7,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Container } from "@mui/material";
 import SearchResult from "./SearchResult";
 import axios from "../../axios";
-// import axios from 'axios';
 
 export default function SearchBar({}) {
   const [search, setSearch] = React.useState();

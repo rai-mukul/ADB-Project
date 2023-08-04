@@ -3,7 +3,6 @@ import { Avatar, Card, CardContent, Grid, Typography } from "@mui/material";
 import BeenhereIcon from "@mui/icons-material/Beenhere";
 import { connect } from "react-redux";
 import axios from "../../axios";
-// import axios from 'axios';
 
 const TodayAppointments = (props) => {
   let [rows, setRows] = React.useState([]);

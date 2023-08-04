@@ -7,7 +7,6 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import CssBaseline from "@mui/material/CssBaseline";
 import SuccessBox from "./SuccessBox";
 import axios from "../../axios";
-// import axios from 'axios';
 
 function Copyright(props) {
   return (
