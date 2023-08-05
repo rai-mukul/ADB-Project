@@ -3,40 +3,37 @@ const AppError = require("../utils/appError");
 const Book = require("../model/bookingModel");
 const sendEmail = require("../utils/email");
 
+exports.book = catchAsync(async (req, res, next) => {
+  let d = Date.parse(req.body.date);
+  let f = req.body.takenTime * 60 * 1000;
+  const findbooking = await Book.find({
+    productName: req.body.ProductName,
+    serviceCompleteTime: { $gt: d },
+  });
+  // // console.log(d)
+  // // // console.log(d+f)
+  // // console.log(findbooking)
+  // // console.log(typeof finddf.serviceCompleteTime)
+  // // console.log(Date.parse(Date.parse(req.body.date)+(req.body.tekenTime*60*1000)));
 
+  if (findbooking.length === 0) {
+    const booking = await Book.create({
+      userName: req.user.name,
+      user: req.user._id,
+      parlourName: req.body.parlourName,
+      productName: req.body.ProductName,
+      date: req.body.date,
+      price: req.body.price,
+      takenTime: req.body.takenTime,
+      parlour: req.body.parlour,
+      serviceCompleteTime: d + f,
+    });
 
-
-exports.book = catchAsync(async (req, res, next) => { 
-      let d = Date.parse(req.body.date)
-      let f = req.body.takenTime*60*1000
-    const findbooking  =  await Book.find({
-      productName:req.body.ProductName,
-      serviceCompleteTime:{$gt:d}
-    })  
-    // // console.log(d)
-    // // // console.log(d+f)
-    // // console.log(findbooking)
-    // // console.log(typeof finddf.serviceCompleteTime)
-    // // console.log(Date.parse(Date.parse(req.body.date)+(req.body.tekenTime*60*1000)));
-   
-   if (findbooking.length === 0 ) {
-        const booking = await Book.create({
-          userName: req.user.name,
-          user:req.user._id,
-          parlourName: req.body.parlourName,
-          productName: req.body.ProductName,
-          date: req.body.date,
-          price: req.body.price,
-          takenTime: req.body.takenTime,
-          parlour:req.body.parlour,
-          serviceCompleteTime: d+f
-        });
-
-        try {
-          await sendEmail({
-            email: `${req.user.email},${req.body.email}`,
-            subject: "Your Booking",
-              message:`<table
+    try {
+      await sendEmail({
+        email: `${req.user.email},${req.body.email}`,
+        subject: "Your Booking",
+        message: `<table
               role="presentation"
               border="0"
               cellpadding="0"
@@ -84,69 +81,63 @@ exports.book = catchAsync(async (req, res, next) => {
                   </div>
                 </td>
               </tr>
-            </table>`
-          });
-          res.status(200).json({
-            data: {
-              status: "success",
-              booking,
-            },
-          });
-        } catch (error) {
-          res.status(500).json({
-            status: "failed",
-            message: error.message,
-          });
-        }
-   }else{
+            </table>`,
+      });
+      res.status(200).json({
+        data: {
+          status: "success",
+          booking,
+        },
+      });
+    } catch (error) {
+      res.status(500).json({
+        status: "failed",
+        message: error.message,
+      });
+    }
+  } else {
     res.status(200).json({
       data: {
         status: "This parlour is not accepting the order at this time.",
       },
     });
-   }
-
+  }
 });
 
-
 exports.historyUser = catchAsync(async (req, res, next) => {
-  const orders = await Book.find({user:req.body.id})
-  
+  const orders = await Book.find({ user: req.body.id });
+
   res.status(200).json({
     data: {
       status: "success",
-      orders
+      orders,
     },
   });
-
-})
+});
 
 exports.historyParlour = catchAsync(async (req, res, next) => {
-  const orders = await Book.find({parlour:req.body.id})
+  const orders = await Book.find({ parlour: req.body.id });
 
   res.status(200).json({
     data: {
       status: "success",
-      orders
+      orders,
     },
   });
+});
 
-})
-
-
-exports.toDayAppointment = catchAsync(async(req,res,next)=>{
-
+exports.toDayAppointment = catchAsync(async (req, res, next) => {
   var date = new Date();
 
   const todayOrder = await Book.find({
-    parlour:req.body.id,
-    time:{ $gt:date.setDate(date.getDate()-1) }
-   })
+    parlour: req.body.id,
+    time: { $gt: date.setDate(date.getDate() - 1) },
+  });
 
   res.status(200).json({
     data: {
       status: "success",
-      todayOrder
+      todayOrder,
     },
   });
-})
+});

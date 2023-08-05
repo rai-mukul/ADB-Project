@@ -2,6 +2,7 @@ import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import {
+  AlertTitle,
   Button,
   Card,
   Container,
@@ -74,7 +75,9 @@ const Appointment = ({ user }) => {
       parlourName: allpros?.parlour?.name,
       ProductName: allpros?.title,
       takenTime: allpros?.duration,
-      date: new Date(`${appDate} ${appTime}`),
+      date: new Date(`${appDate} ${appTime}`).toLocaleString("en-US", {
+        timeZone: "America/Chicago",
+      }),
       price: allpros?.price*1,
       email: allpros?.parlour?.email,
       parlour: allpros?.parlour?.id,
@@ -108,7 +111,9 @@ const Appointment = ({ user }) => {
               },
             });
             
-            alert(userData?.data?.data?.status);
+            // alert(userData?.data?.data?.status);
+            <AlertTitle>{userData?.data?.data?.status}</AlertTitle>
+
             navigate("/product");
           },
     
